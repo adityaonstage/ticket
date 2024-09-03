@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeritageKonect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="style1.css">  
+</head>
+<body>
+    <div class="container">
+        <div class="container-name">
+            <h1>QR Scanner</h1>
+        </div>
+
+        <div>
+            <video id="qr-video" autoplay></video>
+        </div>
+
+        <div class="button-container">
+            <button class="book-ticket-button" id="scan-button">Scan QR Code</button>
+        </div>
+
+        <p id="qr-result">&nbsp;&nbsp;QR Code content will be displayed here.</p>
+        <img id="qrCodeImage" src="" alt="QR Code Image" style="display: none;">
+    <br/>
+
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+
+    <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+
+    <script src="scanner.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeritageKonect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" />
+        
+    <link rel="stylesheet" type="text/css" href="style1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container-name">
+            <h1>
+                Enter Details
+            </h1>
+        </div>
+    <form action="view.html" class="form" id="form" name="submit-to-google-sheet" onsubmit="return validateAndSubmit()">
+        
+        <table>
+            <tr class="form-control">
+                <td><label class="required"><b>Museum/Monuments:</b></label></td>
+                <td>
+                    <select id="museum" onchange="handleMuseum(value)" required>
+                        <option value="">Select</option>
+                        <option value="Bibi Ka Maqbara">Bibi Ka Maqbara</option>
+                        <option value="Daulatabad Fort">Daulatabad Fort</option>
+                        <option value="Ellora Caves">Ellora Caves</option>
+                        <option value="Ajanta Caves">Ajanta Caves</option>
+                        <option value="Aurangabad Caves">Aurangabad Caves</option>
+                        <option value="Panchakki (Water Mill)">Panchakki (Water Mill)</option>
+                        <option value="Chhatrapati Shivaji Maharaj Museum of Art, Aurangabad">Chhatrapati Shivaji Maharaj Museum of Art, Aurangabad</option>
+                        <option value="Dr. Babasaheb Ambedkar Marathwada University Archaeological Museum">Dr. Babasaheb Ambedkar Marathwada University Archaeological Museum</option>
+                        <option value="Sunheri Mahal Museum">Sunheri Mahal Museum</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="form-control">
+                <td><label class="required"><b>Name:</b></label></td>
+                <td>
+                    <input type="text" id="names" pattern="[A-Za-z]+" onchange="handleNames(value)"/>
+                </td>
+            </tr>
+            <tr class="form-control">
+                <td><label class="required"><b>Email:</b></label></td>
+                <td>
+                    <input type="email" id="email" onchange="handleEmail(value)"/>
+                </td>
+            </tr>
+            <tr class="form-control">
+                <td><label class="required"><b>Phone No.:</b></label></td>
+                <td>
+                    <input type="tel" id="phoneNo" minlength="10" pattern="[0-9]+" onchange="handlePhoneNo(value)"/>
+                </td>
+            </tr>
+            <tr class="form-control">
+                <td><label class="required"><b>Gender:</b></label></td>
+                <td>
+                    <label><input onchange="handleGenders(this)" type="radio" id="male" name="gender" value="male">
+                    Male</label>
+                    &nbsp;&nbsp;&nbsp;
+                    <label><input onchange="handleGenders(this)" type="radio" id="female" name="gender" value="female">
+                    Female</label><br>
+                </td>
+            </tr>
+            <tr class="form-control">
+                <td><label class="required"><b>Aadhar Card No:</b></label></td>
+                <td>
+                    <input type="number" id="aadhar" minlength="12" pattern="[0-9]+" onchange="handleAadhar(value)"/>
+                </td>
+            </tr>
+            <!-- <tr class="form-control">
+                <td colspan="2"><span class="optional">PERSON DETAILS</span></td>
+            </tr> -->
+            <tr class="form-control">
+                <td><label class="required"><b>Adults:</b></label></td>
+                <td>
+                    <select id="adults" onchange="handleAdults(value)" required>
+                        <!-- <option value="">Select</option> -->
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="form-control">
+                <td><label class=""><b>Children:</b></label></td>
+                <td>
+                    <select id="children" onchange="handleChildren(value)">
+                        <option value="0">Select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="form-control">
+                <td><label class="required"><b>Date (mm/dd/yyyy):</b></label></td>
+                <td>
+                    <input type="date" id="date" name="date" onchange="handleDate(value)" required>
+                </td>
+            </tr>
+            <tr class="form-control">
+                <td><label class=""><b>Adult fare: </b></label></td>
+                <td><span>₹50/adult</span></td>
+            </tr>
+            <tr class="form-control">
+                <td><label class=""><b>Children fare: </b></label></td>
+                <td><span>₹25/child</span></td>
+            </tr>
+            <tr class="form-control">
+                <td><label class=""><b>Total fare:</b></label></td>
+                <td><span id="totalFare"></span></td>
+            </tr>
+        </table>
+        
+        <span id="bttn">
+            <input type="submit" class="btn sbtn" onclick="validateAndSubmit()" id="sbtn">&nbsp;&nbsp;&nbsp;
+            <input type="reset" class="btn rbtn" id="rbtn">
+        </span>
+    </form>
+    
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+

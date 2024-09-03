@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Heritage Konect</title>
+</head>
+<body>
+    
+    <header>
+        <div>
+            <h1 class="app-name">
+                    <img src="images/namaste.png" alt="Left Image" class="icon">
+                    Heritage<span style="color: rgb(33, 27, 66);">Konect</span>
+                    <img src="images/namaste.png" alt="Left Image" class="icon">
+                </h1>
+            </div>
+    </header>
+
+    
+    <section class="intro">
+        <h1>Explore India's Famous Places</h1>
+        <p>Discover the cultural wonders of India. Explore historical monuments, museums, and more.</p>
+
+        <div class="button-container">
+            <button class="book-ticket-button" id="myButton">book now</button>
+            <script>
+                const button = document.getElementById("myButton");
+                button.addEventListener("click", () => {
+                    window.location.href = "book.html";
+                });
+            </script>
+        </div>
+        
+    </section>
+
+
+    <section>
+        <div class="place">
+            <h3>The Heritage of India</h3>
+            <section class="places">
+                <div class="place">
+                    <h3>Taj Mahal</h3>
+                    <img src="images/taj_mahal.jpg" alt="Taj Mahal Image">
+                    <p>An iconic white marble mausoleum in Agra, Uttar Pradesh.
+                       <p><a href="https://en.wikipedia.org/wiki/Taj_Mahal" target="_blank" style="color: blue; text-decoration: underline;">read more</a></p>
+                    </p>
+                </div>
+        
+                <div class="place">
+                    <h3>Jaipur City Palace</h3>
+                    <img src="images/jaipur_city_palace.jpg" alt="Jaipur City Palace Image">
+                    <p>A historic royal palace complex in Jaipur, Rajasthan.</p>
+                    <p><a href="https://en.wikipedia.org/wiki/City_Palace,_Jaipur" target="_blank" style="color: blue; text-decoration: underline;">read more</a></p>
+                </div>
+                
+                <div class="place">
+                    <h3>Hawa Mahal</h3>
+                    <img src="images/hawa_mahal.jpg" alt="Hawa Mahal Image">
+                    <p>A historic royal palace complex in Jaipur, Rajasthan.</p>
+                    <p><a href="https://en.wikipedia.org/wiki/Hawa_Mahal" target="_blank" style="color: blue; text-decoration: underline;">read more</a></p>
+                </div>
+        
+                <div class="place">
+                    <h3>Ajanta Caves</h3>
+                    <img src="images/ajanta_caves.jpg" alt="Ajanta Caves Image">
+                    <p>A historic royal palace complex in Jaipur, Rajasthan.</p>
+                    <p><a href="https://en.wikipedia.org/wiki/Taj_Mahal" target="_blank" style="color: blue; text-decoration: underlines;">read more</a></p>
+                </div>
+            </section>
+        </div>
+        
+    </section>
+    <div class="world">
+        <h2><a href="https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_in_India" target="_blank">
+            <span style="color: rgb(204, 133, 0);">World</span>
+            <span style="color: blue;">Heritage</span>
+            <span style="color: green;">Sites</span>
+            <span style="color: rgb(218, 141, 0);">in</span>
+            <span style="color: blue;">India</span> </a></h2>
+    </div>
+
+    <footer>
+        <!-- // -->
+    </footer>
+
+</body>
+</html>

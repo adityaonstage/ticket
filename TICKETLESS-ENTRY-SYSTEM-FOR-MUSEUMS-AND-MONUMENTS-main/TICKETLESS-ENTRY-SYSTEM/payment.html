@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Add your CSS link here -->
+</head>
+<body>
+    <header>
+        <div class="container-name">
+            <!-- Your site name and logo -->
+        </div>
+    </header>
+    <div class="container space">
+        <div class="card-container">
+            <h1>Payment</h1>
+            <form action="process_payment.php" method="POST">
+                <!-- Payment form fields -->
+                <div class="input-field">
+                    <label for="card_number">Card Number</label>
+                    <input type="text" id="card_number" name="card_number" required>
+                </div>
+                <!-- Add more payment fields here -->
+
+                <div class="total-fare">
+                    Total Fare: $XXX.XX <!-- Display the calculated fare here -->
+                </div>
+                <button type="submit" class="book-button">Pay Now</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
